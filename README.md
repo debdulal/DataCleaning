@@ -27,7 +27,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 
 
-## The dataset includes the following files:
+#### The dataset include following files:
 
 - 'README.txt'
 
@@ -56,7 +56,7 @@ The following files are available for the train and test data. Their description
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
 
-## Notes: 
+#### Notes: 
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
 
@@ -64,7 +64,7 @@ For more information about this dataset contact: activityrecognition@smartlab.ws
 
 
 
-## Looking at the data
+## First Look at Data
 After doiwnloading the unzipped set of data files looked like this.
 "code_book.txt.txt" "projectData.zip" "UCI HAR Dataset"
 
@@ -98,7 +98,7 @@ Read activity, subject and text/train data to create test set and train set.
 * Get subject ids.
 * Get test /train labels
 
-## Data cleaning, removal of duplicates
+## Cleaning data, removal of duplicates
 After analyzing the varibales duplicates are detected and those varibales are removed from the test and train data set.
 
 ## Processing data
