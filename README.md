@@ -20,19 +20,19 @@ unzip(zipfile=destFile,exdir="./project")
 
 Steps Followed
 
-Load library dplyr 
-Get zipped data
-Unzip data
-Get all files
-Creating test data using xtest,ytest & subject test  
-Creating train data using xtrain, ytrain & subject train
-Create the features data
-Providing proper variable names to test / train data set
-Remove duplicate variables
-Providing proper variable names to activity data set
-Creating full test data and train data set by merging subject and activity
-Create the main data table merging both table tables - this is the outcome of 1
-Getting subset of data for mean and std
+* Load library dplyr 
+* Get zipped data
+* Unzip data
+* Get all files
+* Creating test data using xtest,ytest & subject test  
+* Creating train data using xtrain, ytrain & subject train
+* Create the features data
+* Providing proper variable names to test / train data set
+* Remove duplicate variables
+* Providing proper variable names to activity data set
+* Creating full test data and train data set by merging subject and activity
+* Create the main data table merging both table tables - this is the outcome of 1
+* Getting subset of data for mean and std
 adding activity labels
-Create new tidy data set 
-write tidy data set
+* Create new tidy data set 
+* write tidy data set
