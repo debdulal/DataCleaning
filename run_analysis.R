@@ -1,8 +1,11 @@
+# Load library  
+library(dplyr)
+  
   # Getting zipped data
   zipurl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
   if(!file.exists("./project")){
    dir.create("./project")
-    }
+  }
   destFile <- "./project/projectData.zip"
   download.file(zipurl,destFile)
   unzip(zipfile=destFile,exdir="./project")
@@ -54,7 +57,7 @@
   
   
   #Providing proper variable names to activity data set
-  colnames(activityLabelsData) <- c('activityid','activitytype')
+  colnames(activityLabelsData) <- c("activityid","activitytype")
   
   #Creating full test data and train data set by merging subject and activity
   testFull = cbind(subjectTestData, testDataY, testDataX)
@@ -65,19 +68,18 @@
 
 
   #Getting subset of data for mean and std
-
-  mean_std <- select(test_train, matches("subjectid|activityid|mean|std"))
+  
+  mean_std <- select(test_train, matches("subjectid|activityid|[Mm]ean|[Ss]td"))
   
   # adding activity labels
-  mean_std_activity_name = merge(mean_std, activityLabelsData, by='activityid', all.x=TRUE)
-  
-  
+  mean_std_activity_name = join(activityLabelsData,mean_std,type = "inner")
+
   # Create new tidy data set 
-  tidyDataSet <- mean_std_activity_name %>%
-    group_by(activityid,subjectid) %>%
+  tidyDataSet <- mean_std_activity_name %>% 
+    group_by(activitytype,subjectid) %>%
     summarize_all(funs(mean)) %>%
     arrange(subjectid, activityid)
-  
+
   #write tidy data set
   write.table(tidyDataSet, "./project/tidyDataSet.txt",row.name=FALSE)
-
+  
